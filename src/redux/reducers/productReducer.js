@@ -1,13 +1,7 @@
 import { ActionTypes } from "../constants/action-types";
 
 const initialState = {
-    products: [
-        {
-            id: 0,
-            title: "Alya",
-            category: "programmer",
-        },
-    ],
+    products: [],
 };
 
 export const productsReducer = (state = initialState, { type, payload }) => {
