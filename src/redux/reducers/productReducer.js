@@ -7,14 +7,14 @@ const initialState = {
             title: "Alya",
             category: "programmer",
         },
-    ];
+    ],
 };
 
-export const productsReducer = (state, (type, payload)) => {
+export const productsReducer = (state = initialState, { type, payload }) => {
     switch (type) {
-        case ActionTypes.SET_PRODUCTS:
-            return state;
-        default:
-            return state;
+      case ActionTypes.SET_PRODUCTS:
+        return { ...state, products: payload };
+      default:
+        return state;
     }
-};
+  };

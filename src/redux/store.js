@@ -1,11 +1,10 @@
-import { createStoreHook } from "redux";
-import reducers from './reducers/index';
-import { createStoreHook } from "react-redux";
+import { configureStore } from '@reduxjs/toolkit';
 
-const store = createStoreHook(
-    reducers, 
-    {}, 
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
+import reducers from "./reducers/index";
+
+const store = configureStore({
+  reducer: reducers,
+  devTools: true,
+});
 
 export default store;
